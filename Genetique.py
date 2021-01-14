@@ -6,20 +6,27 @@ Created on Thu Jan 14 16:38:28 2021
 """
 from Personne import Personne
 
-class genetique:
+class Genetique:
     
     listPersonnes = []
     
-    def __init__(self,phrase):
-        for i in range(0,500):
+    def __init__(self,phrase, numberPop):
+        for i in range(0,numberPop):
             New_personne = Personne(len(phrase))
             self.listPersonnes.append(New_personne)
-    
-    def selection():
+ 
+    def selection(self,phrase):
         
+        self.listPersonnes.sort(key=lambda x: x.fitness(phrase), reverse=True)
+        return self.listPersonnes[:10]
         
+       
+    def getList(self,phrase):
+       for y in range(0,500):
+           print(self.listPersonnes[y].fitness(phrase))
+
     def crossover():
         
         
     def mutation():
-    
+        print("A faire")
