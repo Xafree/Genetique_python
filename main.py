@@ -8,6 +8,7 @@ from Personne import Personne
 from Genetique import Genetique
 listeNewGen = []
 listPersonne = []
+countGeneration = 1
 phrase = "salut à tous, c'est lasalle"
 print( " La phrase a trouver et :" ,phrase)
 
@@ -21,15 +22,15 @@ gene = Genetique(phrase,500,listPersonne)
 
 while listPersonne[1] != phrase:
     gene.selection(phrase)
-    gene.getList(phrase);
+    gene.getList(phrase,countGeneration);
     while len(listeNewGen) < 500:
         listeGen = gene.crossover()
         for i in range(0,len(listeGen)):
             listeNewGen.append(listeGen[i].mutation(phrase))
     
     listPersonne = listeNewGen
-    gene.getList(phrase);
-
+    countGeneration+=1;
+    
 
 
 

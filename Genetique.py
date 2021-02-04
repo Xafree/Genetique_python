@@ -19,13 +19,13 @@ class Genetique:
         return self._listPersonnes[:100]
         
        
-    def getList(self,phrase):
-       for y in range(0,len(self._listPersonnes)):
-           print("Génération 1 personne [",y,"] :",self._listPersonnes[y].getGenetique()," nombre de charactère good :",self._listPersonnes[y].getResistance())
+    def getList(self,phrase,generation):
+        print("Génération ",generation," :",self._listPersonnes[1].getGenetique()," nombre de charactère good :",self._listPersonnes[1].getResistance())
 
     def crossover(self):
         newGenerator = []
         for i in range(0,len(self._listPersonnes)-1,2):
+            
             personneX = self._listPersonnes[1].getGenetique() #Parent 1
             personneY = self._listPersonnes[2].getGenetique() #Parent 2
             
