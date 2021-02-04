@@ -28,6 +28,9 @@ class Personne:
     def getGenetique(self):
         return self._genetique  
     
+    def setGenetique(self,genetique):
+        self._genetique = genetique
+    
     def getResistance(self):
         return self._resistance
     
@@ -43,5 +46,18 @@ class Personne:
         self.setResistance(count)        
         return count
 
+    def mutation(self,phrase):
+        
+        indexString = random.randint(0, len(self._phrase))
+        lettreMute = phrase[random.randint(0, len(self._phrase))]
+        
+        if(phrase[indexString] != self.getGenetique()[indexString]):
+            self._genetique[indexString] = lettreMute
+        else:
+            for y in range(0,len(self.getGenetique(),1)):
+                  if self._genetique[y] != phrase[y]:
+                      self._genetique[y] = phrase[y]
+            
+            
     def toString(self):
         return "personne [ genetique = "+self.getGenetique()+"]"
