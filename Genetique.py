@@ -8,32 +8,26 @@ from Personne import Personne
 from random import randint
 
 class Genetique:
-    
-    listPersonnes = []
-    _numberPop = 0
-    _phrase = ""
-    
-    def __init__(self,phrase, numberPop):
+
+    def __init__(self,phrase, numberPop,listPersonnes ):
         self._phrase = phrase
         self._numberPop = numberPop
-        for i in range(0,numberPop):
-            New_personne = Personne(len(phrase))
-            self.listPersonnes.append(New_personne)
+        self._listPersonnes = listPersonnes
  
     def selection(self,phrase):
-        self.listPersonnes.sort(key=lambda x: x.fitness(phrase), reverse=True)
-        return self.listPersonnes[:100]
+        self._listPersonnes.sort(key=lambda x: x.fitness(phrase), reverse=True)
+        return self._listPersonnes[:100]
         
        
     def getList(self,phrase):
-       for y in range(0,len(self.listPersonnes)):
-           print("Génération 1 personne [",y,"] :",self.listPersonnes[y].getGenetique()," nombre de charactère good :",self.listPersonnes[y].getResistance())
+       for y in range(0,len(self._listPersonnes)):
+           print("Génération 1 personne [",y,"] :",self._listPersonnes[y].getGenetique()," nombre de charactère good :",self._listPersonnes[y].getResistance())
 
     def crossover(self):
         newGenerator = []
-        for i in range(0,len(self.listPersonnes)-1,2):
-            personneX = self.listPersonnes[1].getGenetique() #Parent 1
-            personneY = self.listPersonnes[2].getGenetique() #Parent 2
+        for i in range(0,len(self._listPersonnes)-1,2):
+            personneX = self._listPersonnes[1].getGenetique() #Parent 1
+            personneY = self._listPersonnes[2].getGenetique() #Parent 2
             
             random = randint(0, len(self._phrase)) #Nombre aléatoire
             personneOut = Personne(len(self._phrase)) #l'objet enfant
