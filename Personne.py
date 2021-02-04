@@ -26,7 +26,13 @@ class Personne:
         return self._nom
     
     def getGenetique(self):
-        return self._genetique
+        return self._genetique  
+    
+    def getResistance(self):
+        return self._resistance
+    
+    def setResistance(self,number):
+        self._resistance=number
     
     def fitness(self,phrase):
         gen = self.getGenetique()
@@ -37,9 +43,5 @@ class Personne:
         self.setResistance(count)        
         return count
 
-    def setResistance(self,number):
-        self._resistance=number
-
     def toString(self):
-        string = "personne [ genetique = "+self.getGenetique()+"]"
-        return string
+        return "personne [ genetique = "+self.getGenetique()+"]"

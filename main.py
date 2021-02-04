@@ -9,11 +9,12 @@ from Genetique import Genetique
 
 listPersonne = []
 phrase = "salut à tous, c'est lasalle"
-
+print( " La phrase a trouver et :" ,phrase)
 gene = Genetique(phrase,500)
 
 gene.selection(phrase)
 gene.getList(phrase);
+
 
 # for Personne in listPersonne:
 #     print("|",Personne.getGenetique(),"|") 
@@ -23,8 +24,8 @@ gene.getList(phrase);
 # print("|",listPersonne[80].getGenetique(),"|")
 # print(listPersonne[80].fitness(phrase))
 
-# for y in range(0,500):
-#      print(listPersonne[y].fitness(phrase))
+# for y in range(0,2,1):
+#       print(listPersonne[y].fitness(phrase))
      
 
     

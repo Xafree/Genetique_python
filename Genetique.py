@@ -9,24 +9,25 @@ from Personne import Personne
 class Genetique:
     
     listPersonnes = []
+    _numberPop = 0
     
     def __init__(self,phrase, numberPop):
+        self._numberPop = numberPop
         for i in range(0,numberPop):
             New_personne = Personne(len(phrase))
             self.listPersonnes.append(New_personne)
  
     def selection(self,phrase):
-        
         self.listPersonnes.sort(key=lambda x: x.fitness(phrase), reverse=True)
-        return self.listPersonnes[:10]
+        return self.listPersonnes[:100]
         
        
     def getList(self,phrase):
-       for y in range(0,500):
-           print(self.listPersonnes[y].fitness(phrase))
+       for y in range(0,len(phrase)):
+           print("Génération 1 personne [",y,"] :",self.listPersonnes[y].getGenetique()," nombre de charactère good :",self.listPersonnes[y].getResistance() )
 
-    def crossover():
-        
+    def crossover(self, listPersonne):
+        print("todo")
         
     def mutation():
         print("A faire")
