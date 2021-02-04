@@ -42,5 +42,5 @@ class Genetique:
             newGenerator.append(personneOut)
         return newGenerator #Génération 2
         
-    def mutation(self):
-        print("A faire")
+
+        

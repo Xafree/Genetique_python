@@ -50,14 +50,8 @@ class Personne:
         
         indexString = random.randint(0, len(self._phrase))
         lettreMute = phrase[random.randint(0, len(self._phrase))]
-        
-        if(phrase[indexString] != self.getGenetique()[indexString]):
-            self._genetique[indexString] = lettreMute
-        else:
-            for y in range(0,len(self.getGenetique(),1)):
-                  if self._genetique[y] != phrase[y]:
-                      self._genetique[y] = phrase[y]
-            
+        self._genetique[indexString] = lettreMute
+
             
     def toString(self):
         return "personne [ genetique = "+self.getGenetique()+"]"

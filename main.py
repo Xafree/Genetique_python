@@ -16,6 +16,26 @@ gene.selection(phrase)
 gene.getList(phrase);
 gene.crossover()
 gene.getList(phrase);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # for Personne in listPersonne:
 #     print("|",Personne.getGenetique(),"|") 
 
