@@ -47,14 +47,11 @@ class Personne:
         return count
 
     def mutation(self,phrase):
-        
         indexString = random.randint(0, len(phrase))
         lettreMute = phrase[random.randint(0, len(phrase)-1)]
         for i in range(0,len(self._genetique)):
             if(i == indexString):
                 self._genetique.replace(self._genetique[indexString], lettreMute, 1)
-       
-
             
     def toString(self):
         return "personne [ genetique = "+self.getGenetique()+"]"
