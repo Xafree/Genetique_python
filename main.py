@@ -10,7 +10,7 @@ listeNewGen = []
 listPersonne = []
 countGeneration = 1
 nombrePersonne = 1000
-phrase = "salut à tous, c'est lasalle"
+phrase = "mathématique pour l'informatique"
 print("La phrase a trouver et :",phrase)
 
 
@@ -37,8 +37,9 @@ while listPersonne[0].getResistance() != len(phrase)+1:
    countGeneration += 1
    listPersonne = gene.selection(phrase,0.5)
    
-   if listPersonne[0].getResistance() == 27:
+   if listPersonne[0].getResistance() == len(phrase):
        gene.toString(listPersonne,listPersonne[0].getResistance())
+       print("dora c moi : ",listPersonne[0].getResistance())
        break
    
    
