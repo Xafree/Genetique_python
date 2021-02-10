@@ -15,25 +15,33 @@ print("La phrase a trouver et :",phrase)
 
 
 gene = Genetique(phrase,nombrePersonne,listPersonne)
-New_personne = Personne(len(phrase))
+#New_personne = Personne(len(phrase))
 #listPersonne.append(New_personne)
-
-while listPersonne[0].getResistance() != len(phrase):
+listPersonne = gene.selection(phrase,0.5)
+while listPersonne[0].getResistance() != len(phrase)+1:
    #print("resistance",listPersonne[0].getResistance()) 
    #gene.toString(listPersonne,countGeneration)
-   listPersonne = gene.selection(phrase,0.5)
+    #le set de la resistance ce fait ici
+   
    listeNewGen = gene.crossover(listPersonne)
-   gene.toString(listPersonne,countGeneration)
+   
    while len(listeNewGen) < 500:
        listeNewGen += gene.crossover(listPersonne)
 
    for i in range(0,len(listeNewGen)):
        listeNewGen[i].mutation(phrase)
-    
+   
    gene.updateList(listeNewGen)
    
+   gene.toString(listPersonne,listPersonne[0].getResistance())
    countGeneration += 1
-
+   listPersonne = gene.selection(phrase,0.5)
+   
+   if listPersonne[0].getResistance() == 27:
+       gene.toString(listPersonne,listPersonne[0].getResistance())
+       break
+   
+   
    
    
    
