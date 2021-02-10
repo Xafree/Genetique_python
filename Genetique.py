@@ -43,7 +43,8 @@ class Genetique:
             
             personneOut.setGenetique(personneX.getGenetique()[:random]+personneY.getGenetique()[random-len(self._phrase):])#Ajout de ADN
             newGenerator.append(personneOut)
-            
+
+                
         return newGenerator #Génération 2
         
     def toString(self,listPersonnes,generation):
